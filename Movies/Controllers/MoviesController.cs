@@ -36,6 +36,8 @@ namespace Movies.Controllers
         [HttpPost]
         public IHttpActionResult SetMovie(Movies movie)
         {
+            movie.ID = new Guid();
+            
             moviesContext db = new moviesContext();
             db.Movies.Add(movie);
             db.SaveChanges();
