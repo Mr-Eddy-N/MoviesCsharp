@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="moviesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Autores">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Title" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Bases">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Titulo" Type="nchar" MaxLength="50" />
+    <Property Name="Autor" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Directores">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Titulo" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Generos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Titulo" Type="nchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Movies">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Director" Type="uniqueidentifier" />
+    <Property Name="Basado" Type="uniqueidentifier" />
+    <Property Name="Titulo" Type="nchar" MaxLength="50" />
+    <Property Name="Nacionalidad" Type="uniqueidentifier" />
+    <Property Name="Comentarios" Type="text" />
+    <Property Name="Genero" Type="text" />
+  </EntityType>
+  <EntityType Name="Nacionalidades">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Titulo" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="moviesModelStoreContainer">
+    <EntitySet Name="Autores" EntityType="Self.Autores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bases" EntityType="Self.Bases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Directores" EntityType="Self.Directores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Generos" EntityType="Self.Generos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movies" EntityType="Self.Movies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nacionalidades" EntityType="Self.Nacionalidades" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
